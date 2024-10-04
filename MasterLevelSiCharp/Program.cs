@@ -51,9 +51,9 @@ CreateElmaDto dto = new CreateElmaDto()
     Type = "Yeşil Elma"
 };
 
-Elma elma = ElmaMapper.ConvertToEntity(dto);
-ElmaResponseDto response = ElmaMapper.ConvertToResponseDto(elma);
-Console.WriteLine(response);
+//Elma elma = ElmaMapper.ConvertToEntity(dto);
+//ElmaResponseDto response = ElmaMapper.ConvertToResponseDto(elma);
+//Console.WriteLine(response);
 
 Console.WriteLine("**********************************************");
 
@@ -65,6 +65,14 @@ CreateProductDto createProductDto = new CreateProductDto()
 
 };
 
-Product product = ProductMapper.ConvertToEntity(createProductDto);
-ProductResponseDto productResponseDto = ProductMapper.ConvertToResponseDto(product);
-Console.WriteLine(productResponseDto);
+//Product product = ProductMapper.ConvertToEntity(createProductDto);
+//ProductResponseDto productResponseDto = ProductMapper.ConvertToResponseDto(product);
+//Console.WriteLine(productResponseDto);
+
+//explicit
+Elma elma = (Elma)dto;
+Console.WriteLine(elma);
+
+ElmaResponseDto response = elma; // implicit dönüşüm
+Console.WriteLine(response);
+

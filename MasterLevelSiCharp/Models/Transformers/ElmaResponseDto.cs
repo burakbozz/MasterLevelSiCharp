@@ -17,6 +17,16 @@ public class ElmaResponseDto
 
     public string Type { get; set; }
 
+
+    public static implicit operator ElmaResponseDto(Elma elma)
+    {
+        return new ElmaResponseDto
+        {
+            Color = elma.Color,
+            Type = elma.Type,
+            KgPrice = elma.KgPrice
+        };
+    }
     public override string ToString()
     {
         return $" Kg Fiyatı : {KgPrice}, Renk : {Color}, " +
